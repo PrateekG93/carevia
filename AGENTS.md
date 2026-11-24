@@ -1,0 +1,19 @@
+<!-- LOVABLE:BEGIN -->
+
+> [!IMPORTANT]
+> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
+> published git history — force pushing, or rebasing/amending/squashing commits
+> that are already pushed — as it rewrites history on Lovable's side and the
+> user will likely lose their project history.
+>
+> Commits you push to the connected branch sync back to Lovable and show up in
+> the editor, so keep the branch in a working state.
+
+<!-- LOVABLE:END -->
+
+## Application architecture
+
+- Keep this specification's frontend prototype in the shared React store; persist only cart product IDs and quantities, never personal or medical records.
+- Keep medical guidance, file validation, booking validation and map data helpers separate from presentation so safety rules can be tested directly.
+- Load Leaflet dynamically after hydration; map data must stay in browser-safe modules and map lifecycles must clean up on unmount.
+- Use existing public route URLs for care workflows; unconnected provider actions must remain explicit demonstrations rather than real confirmations.
